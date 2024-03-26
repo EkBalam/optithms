@@ -1,6 +1,9 @@
+from typing import Callable
 import numpy as np
+from optithms.functions import Problema
 
-def busqueda_exhaustiva(funcion, a: float, b: float, n: int) -> tuple[float, float]:
+def busqueda_exhaustiva(funcion: Callable,  n: int, 
+                        a: float = None, b: float = None) -> tuple[float, float]:
     """Algoritmo de búsqueda exhaustiva
 
     Args:
@@ -12,6 +15,10 @@ def busqueda_exhaustiva(funcion, a: float, b: float, n: int) -> tuple[float, flo
     Returns:
         tuple[float, float]: intervalo donde se encuentra el mínimo
     """
+    
+    if isinstance(funcion, Problema) :
+        a, b = funcion.limites()
+    
     x1 = a
     delta_x = (b-a)/n
     x2 = x1 + delta_x
@@ -44,7 +51,6 @@ def acotamiento_fase(funcion, x: float, delta: float)-> tuple[float, float]:
     x_k_mas1 = x_k + (2**k) * delta
     
     while funcion(x_k_mas1) < funcion(x_k):
-        print(x_k_menos1, x_k, x_k_mas1)
         x_k_menos1 = x_k
         x_k = x_k_mas1
         k += 1
