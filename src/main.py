@@ -1,5 +1,6 @@
 from optithms.functions import Lata, Funcion1
-from optithms.algoritmos.univariable import BusquedaExhaustiva, FaseDeAcotamiento, acotamiento_fase
+from optithms.algoritmos.univariable import BusquedaExhaustiva, FaseDeAcotamiento
+from optithms.algoritmos.univariable import IntervalosMitad
 
 if __name__ == "__main__":
 
@@ -7,17 +8,8 @@ if __name__ == "__main__":
 
     print(f"{be} Clase callable ", be.ejecutar())
 
-    result = acotamiento_fase(Funcion1(), 0.6, 0.5)
-    print("AF Clase callable ", result)
-
     fa = FaseDeAcotamiento(Funcion1(), 0.6, 0.5)
     print(f"{fa} Clase callable ", fa.ejecutar())
 
-    # result = BusquedaExhaustiva(Lata(), 10)
-    # print("BE Lata Clase callable ", result)
-
-
-    # lata = Lata()
-
-    # print(lata(-2))
-
+    im = IntervalosMitad(Funcion1(), epsilon=10e-3)
+    print(f"{im} Clase callable ", im.ejecutar())
