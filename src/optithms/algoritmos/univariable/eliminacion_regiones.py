@@ -18,9 +18,9 @@ class IntervalosMitad(Algoritmo):
         xm = (a + b)/2
 
         while L > self.epsilon:
-
             x1 = a + L/4
             x2 = b - L/4
+            print(x1, xm, x2)
 
             fxm = self._funcion(xm)
             if self._funcion(x1) < fxm:
@@ -68,8 +68,9 @@ class Fibonacci(Algoritmo):
         while k <= self.n:
             Lk = (self.n_fibonacci(self.n-k+2)/fib_n1)*L
             
-            x1 = a + Lk
-            x2 = b - Lk
+            x2 = a + Lk
+            x1 = b - Lk
+            print(x1, x2)
 
             a, b = regla_eliminacion(x1, x2, self._funcion(x1), self._funcion(x2), a, b)
             

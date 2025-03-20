@@ -3,3 +3,4 @@ from optithms.algoritmos.univariable.acotamiento import FaseDeAcotamiento
 from optithms.algoritmos.univariable.eliminacion_regiones import IntervalosMitad
 from optithms.algoritmos.univariable.eliminacion_regiones import Fibonacci
 from optithms.algoritmos.univariable.eliminacion_regiones import BusquedaDorada
+from optithms.algoritmos.univariable.gradiente import NewtonRaphson

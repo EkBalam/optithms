@@ -72,7 +72,7 @@ class FaseDeAcotamiento(Algoritmo):
             tuple[float, float]: intervalo donde se encuentra el mínimo
         """
         if self._funcion( self.x - np.abs(self.delta)) <= \
-            self._funcion(self.x) <= self._funcion(self.x+np.abs(self._delta)) :
+            self._funcion(self.x) <= self._funcion(self.x+np.abs(self.delta)) :
             self.delta *= -1
     
         k = 0

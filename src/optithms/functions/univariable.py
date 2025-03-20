@@ -49,7 +49,7 @@ class Caja(Problema):
             float:  Volumen de la cada dado un L
         """
         super().funcion(l)
-        return (20 - 2 * l) * (10 - 2 * l) * (l)
+        return ((20 - 2 * l) * (10 - 2 * l) * (l)) * -1
 
     def limites(self) -> tuple[float, float]:
         """
